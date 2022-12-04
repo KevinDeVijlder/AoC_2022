@@ -48,7 +48,6 @@ def determineType(figureOne, figureTwo):
 with open('input.txt', 'r') as f:
     lines = f.readlines()
 
-    thislist = []
     value = 0
     for line in lines:
         input = line.split()
