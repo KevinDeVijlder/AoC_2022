@@ -31,16 +31,46 @@ prioritydict = {
 
 with open('input.txt', 'r') as f:
     lines = f.readlines()
+
     list = []
-    value = 0
+    total_part_one = 0
+
+    total_part_two = 0
+    counter = 0
     for line in lines:
+        # challenge 1
         res_first = line[:len(line)//2]
         res_second = line[len(line)//2:]
         
         common_character = ''.join( set(res_first).intersection(res_second))
         list.append(common_character)
         numbervalue = prioritydict.get(common_character, 0)
-        value = value + numbervalue
+        total_part_one += numbervalue
 
-    print(list)
-    print(value)     
+        # challenge 2
+        if(counter == 0):
+            line_one = line.strip()
+            counter = counter + 1
+        elif(counter == 1):
+            line_two = line.strip()
+            counter = counter + 1
+        else:
+            line_three = line.strip()
+            counter = 0
+
+            common_character_one_two = ''.join( set(line_one).intersection(line_two))
+            common_character = ''.join( set(common_character_one_two).intersection(line_three))
+        
+            numbervalue = prioritydict.get(common_character, 0)
+            total_part_two += numbervalue
+
+print("The result for AoC day 3 part 1 is: " + str(total_part_one))
+print("The result for AoC day 3 part 2 is: " + str(total_part_two)) 
+print(r"""     
+     *
+    ***
+   *****
+  *******
+ *********
+     * 
+Merry Xmas!""")
