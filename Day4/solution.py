@@ -5,6 +5,8 @@ with open('input.txt', 'r') as f:
     total_partial_overlaps = 0
     
     for line in lines:
+        # challenge 1 
+
         #strip line
         clean_line = line.strip()
 
@@ -30,13 +32,22 @@ with open('input.txt', 'r') as f:
           or(elf_two_first_val >= elf_one_first_val and elf_two_second_val <= elf_one_second_val)) :
             total_overlaps += 1
 
-        # part two , partials
+        # challenge 2 partials
         if ((elf_one_first_val >= elf_two_first_val and elf_one_second_val <= elf_two_second_val) 
           or(elf_two_first_val >= elf_one_first_val and elf_two_second_val <= elf_one_second_val)
           or(elf_two_first_val <= elf_one_second_val and elf_two_second_val >= elf_one_first_val)
           or(elf_two_first_val <= elf_one_second_val and elf_two_second_val >= elf_one_first_val)):
             total_partial_overlaps += 1
-        
-    print("The result for AoC day 4 part 1 is: " + str(total_overlaps))
-    print("The result for AoC day 4 part 2 is: " + str(total_partial_overlaps))
+
+
+print("The result for AoC day 4 part 1 is: " + str(total_overlaps))
+print("The result for AoC day 4 part 2 is: " + str(total_partial_overlaps)) 
+print(r"""     
+     *
+    ***
+   *****
+  *******
+ *********
+     * 
+Merry Xmas!""")
  
