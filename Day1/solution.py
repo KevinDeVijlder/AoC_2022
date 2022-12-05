@@ -5,21 +5,25 @@ with open('input.txt', 'r') as f:
     value = 0
     for line in lines:
         if line.strip() == "":
-            print('The line is empty')
             thislist.append(value)
             value=0
         else:
-            print('The line is NOT empty')
             value = value + int(line)
 
-# challenge 1
-    print(thislist)
+    # challenge 1
     max_index = max(thislist)
-    print(max_index)
-
-    print("--------------------------------------------------")
 
     # Challenge 2
     thislist.sort()
-    print(thislist)
-    print((sum(thislist[-3:])))
+    top_three = (sum(thislist[-3:]))
+
+print("The result for AoC day 1 part 1 is: " + str(max_index))
+print("The result for AoC day 1 part 2 is: " + str(top_three)) 
+print(r"""     
+     *
+    ***
+   *****
+  *******
+ *********
+     * 
+Merry Xmas!""")
